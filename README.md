@@ -20,7 +20,7 @@ Here are some ideas to get you started:
 
 ## 最常用语言  |  Languages
 
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=1cyberlangke1&layout=compact)
+![](https://gh-stats.com/api/1cyberlangke1?widgets=name%2Clanguages&order=name%2Clanguages%2Cimpact%2Cgrade%2Cstreaks%2Ccollaborators%2Cfocus%2Cachievements)
 
 ## 总访问  |  Total Visits
 
