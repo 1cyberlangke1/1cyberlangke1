@@ -16,7 +16,7 @@ Here are some ideas to get you started:
 <h1 align="center"> Hello! > < </h1>
 
 
-![](https://github-readme-stats.vercel.app/api?username=1cyberlangke1&show_icons=true&custom_title=My%20GitHub%20Stats)
+![](http://github-profile-summary-cards.vercel.app/api/cards/stats?username=1cyberlangke1&theme=2077)
 
 ## 最常用语言  |  Languages
 
