@@ -1,9 +1,9 @@
 name: 生成贪吃蛇动画
 
 on:
-  # 每24小时运行一次
+  # 每12小时运行一次
   schedule:
-    - cron: "0 */24 * * *"
+    - cron: "0 */12 * * *"
 
   # 允许用户手动在 GitHub Actions 页面点击 “Run workflow” 按钮运行。
   workflow_dispatch:
@@ -28,8 +28,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake.svg?color_snake=%23ff5ca8&color_dots=%23fbe6f2,%23f8b8d8,%23f08ab8,%23e05a95,%23a855b8
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=%23ff5ca8&color_dots=%23fbe6f2,%23f8b8d8,%23f08ab8,%23e05a95,%23a855b8
 
       # 推送生成的 SVG 动画到 output 分支
       - name: 推送 贪吃蛇动画 到 output 分支

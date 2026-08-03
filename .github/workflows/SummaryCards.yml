@@ -2,7 +2,7 @@ name: 生成个人资料卡片
 
 on:
   schedule:
-    - cron: "0 */24 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -24,4 +24,4 @@ jobs:
           BRANCH_NAME: "main"
           UTC_OFFSET: 8
           EXCLUDE: "c,assembly"
-          THEME: "github"
+          THEME: "tokyonight"
