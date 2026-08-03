@@ -1,0 +1,41 @@
+name: 生成贪吃蛇动画
+
+on:
+  # 每24小时运行一次
+  schedule:
+    - cron: "0 */24 * * *"
+
+  # 允许用户手动在 GitHub Actions 页面点击 “Run workflow” 按钮运行。
+  workflow_dispatch:
+
+  # 主分支有 提交 时触发此工作流 （当前主分支是 main）
+  push:
+    branches:
+    - main
+
+# 作业
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      # 生成贡献日历蛇形动画
+      - name: generate github-contribution-grid-snake.svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # 推送生成的 SVG 动画到 output 分支
+      - name: 推送 贪吃蛇动画 到 output 分支
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
